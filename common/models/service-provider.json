@@ -1,0 +1,44 @@
+{
+  "name": "ServiceProvider",
+  "plural": "ServiceProviders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "personaContacto": {
+      "type": "string"
+    },
+    "datosContacto": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "enterprise": {
+      "type": "belongsTo",
+      "model": "Enterprise",
+      "foreignKey": ""
+    },
+    "rubro": {
+      "type": "belongsTo",
+      "model": "Rubro",
+      "foreignKey": ""
+    },
+    "ratingss": {
+      "type": "hasMany",
+      "model": "rating",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

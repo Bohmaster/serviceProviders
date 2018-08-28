@@ -1,0 +1,6 @@
+<span ng-repeat="s in rating track by $index" id="span-{{$index}}">
+    <ion-icon id="{{setId($index)}}" class="iconito" ng-mouseenter="onMouseEnter($event, $index)" ng-mouseleave="onMouseLeave($event)" ng-click="evaluate($event, $index)" name="star-outline" ng-if="currentRating < ($index + 1)">
+    </ion-icon>
+    <ion-icon  id="{{setId($index)}}" class="iconito" ng-mouseenter="onMouseEnter($event, $index)" ng-mouseleave="onMouseLeave($event)" ng-click="evaluate($event, $index)" name="star" ng-if="currentRating >= ($index + 1)">
+    </ion-icon>
+</span>

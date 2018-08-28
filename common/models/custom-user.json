@@ -1,0 +1,48 @@
+{
+  "name": "CustomUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nombre": {
+      "type": "string"
+    },
+    "rol": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ratings": {
+      "type": "hasMany",
+      "model": "rating",
+      "foreignKey": ""
+    }
+  },
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "ratings"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "__get__ratings"
+    }
+  ],
+  "methods": {}
+}
